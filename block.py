@@ -1,4 +1,4 @@
-class block(object):
+class Block(object):
     transactions = []
 
     def __init__(self, transactions=None, previous_block=None):

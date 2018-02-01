@@ -4,14 +4,14 @@ class user(object):
     name = " "
     uniqueAddr = " "
 
-    def __init__(self, name =None, uniqueAddr =None):
+    def __init__(self, name, uniqueAddr =None):
         self.name = name
         self.uniqueAddr = uniqueAddr
 
     def set_name(self, name):
         self.name = name
 
-    def set_uniqueAddr(self, uniqueAddr):
-        salt = generate_salt(uniqueAddr)
-        self.uniqueAddr = encrypt(derive_key(4096 ,salt), uniqueAddr)
+    def set_uniqueAddr(self, name):
+        uniqueAdder = generate_salt(name)
+        self.uniqueAddr = encrypt(name, derive_key(name, uniqueAdder))
 
