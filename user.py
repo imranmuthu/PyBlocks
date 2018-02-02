@@ -12,6 +12,5 @@ class user(object):
         self.name = name
 
     def set_uniqueAddr(self, name):
-        uniqueAdder = generate_salt(name)
-        self.uniqueAddr = encrypt(name, derive_key(name, uniqueAdder))
+        self.uniqueAddr = name
 
